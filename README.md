@@ -4,6 +4,8 @@ ssagent与Shadowsocks运行在同一个机器上，通过Unix Socket与Shadowsoc
 
 ssweb与ssagent通讯，向ssagent发送命令来间接控制Shadowsocks，也负责连接数据库以及控制Web界面。
 
+Notes: 这个系统并不需要特别的多用户Shadowsocks分支版本。
+
 <img src='arch.png'>
 
 # Getting Started
