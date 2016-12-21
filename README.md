@@ -1,3 +1,13 @@
+这是个Shadowsocks多用户管理系统，分为ssweb和ssagent两个服务。
+
+ssagent与Shadowsocks运行在同一个机器上，通过Unix Socket与Shadowsocks交互通讯，向Shadowsocks发送添加端口、删除端口命令，并接收Shadowsocks发来的流量统计信息。
+
+ssweb与ssagent通讯，向ssagent发送命令来间接控制Shadowsocks，也负责连接数据库以及控制Web界面。
+
+<img src='arch.png'>
+
+# Getting Started
+
 首先要搭建Go编译环境来编译代码（ https://golang.org/doc/install ），不过如果你是运行在linux-amd64上的话可以直接下载编译好的来用：https://github.com/namaho/namass/releases/download/1.0/namass.zip
 
 ## Building 
