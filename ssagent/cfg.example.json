@@ -1,0 +1,11 @@
+{
+        "listen": ":9992",
+        "loglevel": "debug",
+        "logfile": "stderr",
+        "ssagent_unix_sock": "/tmp/ssagent.sock",
+        "ssdaemon_unix_sock": "/var/run/shadowsocks-manager.sock",
+        "ssweb_http_address": "www.namaho.com",
+	"server_token": "2fdb069d03a87014766e",
+        "report_interface": "eth0",
+        "area": "1"
+}

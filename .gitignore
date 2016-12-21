@@ -1,0 +1,7 @@
+!*.json
+*.tar.gz
+*.out
+*.example
+var/
+ssagent/ssagent
+ssweb/ssweb

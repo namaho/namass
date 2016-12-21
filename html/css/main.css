@@ -1,0 +1,60 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", "Microsoft Yahei", sans-serif;
+  font-size: 14px;
+  line-height: 1.6; 
+  text-align: left;
+  cursor: auto;
+  color: #000;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th, td {
+  border-bottom: 1px solid #cecfd5;
+  padding: 10px 15px;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.main {
+}
+
+.aside {
+  width: 100px;
+  flex: 1 auto;
+}
+
+.curr {
+  background: #fffbc1;
+}
+
+.wrap_text {
+  display: block;
+}
+
+.wrap_text p {
+  width: 550px;
+}
+
+.tbdesc {
+  text-align: left;
+}
+
+.hl {
+  color: red;
+}

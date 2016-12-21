@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Namaho</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="/css/main.css?v=0.0.17">
+  <script type="text/javascript" src="/js/qrcode.min.js"></script>
+  <style>
+    #note {
+        position: absolute;
+        z-index: 101;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #fde073;
+        text-align: center;
+        line-height: 2.5;
+        overflow: hidden; 
+        -webkit-box-shadow: 0 0 5px black;
+        -moz-box-shadow:    0 0 5px black;
+        box-shadow:         0 0 5px black;
+    }
+    #close:after{
+      display: inline-block;
+      content: "\00d7";
+      float: right;
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <div id="note">关注Twitter可看到本站最新动态：<a href="https://twitter.com/NamahoZero" target="_blank">https://twitter.com/NamahoZero</a><a class="close" id="close"></a></div>
+  <div class="aside">
+    <p class="curr"><a href="/ssweb/user/info">信息页</a></p>
+    <p><a href="/ssweb/login">登陆</a></p>
+    <p><a href="/ssweb/signup">注册</a></p>
+  </div>
+  <div class="main">
+    <div>
+      <h3>服务器信息:</h3>
+      <table>
+        <tbody>      
+          <tr>
+            <td class="tbdesc">美国线路地址:</td>
+            <td>us.bilibilitv.pw</td>
+            <td>{{.USIP4}}</td>
+          </tr>
+          <tr>
+            <td class="tbdesc">日本线路地址:</td>
+            <td>jp.bilibilitv.pw</td>
+            <td>{{.JPIP4}}</td>
+          </tr>
+          <tr><td class="tbdesc">服务器端口:</td><td>{{.Port}}&nbsp;<span style="color:red">(状态: {{.PortState}})</span></td></tr>
+          <tr><td class="tbdesc">密码:</td><td>{{.Password}}</td></tr>
+          <tr><td class="tbdesc">加密方法:</td><td>aes-256-cfb</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+    <div>
+      <h3>配置二维码（随机线路）:</h3>
+      <div id="qrcode"></div>
+    </div>
+    <br>
+    <div>
+      <h3>个人信息:</h3>
+        <table>
+          <tbody>      
+            <tr><td class="tbdesc">邮箱:</td><td>{{.Email}}</td></tr>
+            <tr><td class="tbdesc">流量统计:</td><td>{{.Transfer}}</td></tr>
+          </tbody>
+        </table>
+    </div>
+
+<!--
+    <div>
+      <h3>谷歌服务镜像站（镜像站仅供本站用户使用，请不要扩散）:</h3>
+        <table>
+          <tbody>      
+            <tr><td>Google搜索:</td><td><a href="https://g.namaho.com" target="_blank">https://g.namaho.com</a></td></tr>
+            <tr><td>Google学术:</td><td><a href="https://scholar.namaho.com" target="_blank">https://scholar.namaho.com</a></td></tr>
+          </tbody>
+        </table>
+    </div>
+-->
+
+    <br>
+
+    <div class="wrap_text">
+      <h3>使用需知:</h3>
+      <p>欢迎把本站推荐给身边有需要的小伙伴。</p>
+      <p>来到这里表示你已经完成注册，并且服务器已经为你分配了一个可用的端口。这里提供的服务是Shadowsocks网络加速服务，你需要安装客户端使用。提醒下一般客户端有一项叫“代理端口”的保持1080不要改。</p>
+      <p>如果你初次配置无法使用，请确认下是否有把上面的服务器配置信息填对，比较保险的方法是扫二维码排除人工配置错误。如果你突然用不了，可以试下换条线路，还是用不了，等1~2小时，还不行可以联系下站长。因为Namaho服务器本身在国外，所以Namaho的服务器有时候也会出现通讯问题，但一般只会在某些地区持续1~2小时。另外你还可以用手机的移动网络试试（关掉WIFI）。</p>
+      <p>如果你一开始用起来感觉非常慢或者加载不出内容，不妨试下使用<span class="hl">全局模式</span>，因为有不少域名PAC列表是覆盖不到的（特别是用来加载静态资源的域名），就会拖慢整个页面的加载或者完全加载不出来。</p>
+      <p>本站服务一直未限制过流量和终端数的使用，也没有做限制的打算，但请不要滥用，不要用做P2P下载，P2P下载时请不要开着全局。没有被合理利用的端口会被禁用。服务器也会定期对一段时间内无人使用的端口做关闭处理以节省服务器资源，如果你看到自己的端口处于“不可用”状态，点击启用下即可。</p>
+      <p>本站服务是从2015年8月开始提供至今。</p>
+      <p>本站服务仅提供作学术研究等用途，请不要用作违反法律的网络活动，使用者需要自己承担使用责任。</p>
+      <p>联系站长：&#x6e;&#97;&#109;&#x61;&#x68;&#111;&#46;&#122;&#101;&#114;&#x6f;&#64;&#x67;&#x6d;&#97;&#x69;&#108;&#46;&#99;&#111;&#109;</p>
+<p>Twitter：<a href="https://twitter.com/NamahoZero" class="twitter-follow-button" data-show-count="false">Follow @NamahoZero</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+      <br>
+      <br>
+      <br>
+
+      <p>你可以通过支付宝或者微信扫以下二维码来捐助本站以维持运作，尽管本站服务是免费提供使用，但服务器费用不低，如果本站对你有帮助就请考虑下捐助支持本站吧，谢谢。</p>
+      <div style="position:relative;">
+        <div><span><img width="180px" height="180px" src="https://namaho.org/img/nama_wechat_custom_2.png"></span></div>
+        <div><span><img width="180px" height="150px" src="https://www.namaho.org/img/nama_alipay_custom.jpg"></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+  <script type="text/javascript">
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        text: "{{.QRCode}}",
+        width: 128,
+        height: 128,
+        colorDark : "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+  </script>
+
+  <script>
+   close = document.getElementById("close");
+   close.addEventListener('click', function() {
+     note = document.getElementById("note");
+     note.style.display = 'none';
+   }, false);
+  </script>
+</body>
+</html>
