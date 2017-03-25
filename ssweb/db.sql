@@ -1,10 +1,10 @@
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
     `id` INT(10) NOT NULL AUTO_INCREMENT,
-    `email` VARCHAR(255) NOT NULL,
-    `password` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(191) NOT NULL,
+    `password` VARCHAR(191) NOT NULL,
     `is_verified` TINYINT(2) NOT NULL DEFAULT 0,
-    `verify_code` VARCHAR(255)  NOT NULL,
+    `verify_code` VARCHAR(191)  NOT NULL,
     `verify_email_resends` SMALLINT(2)  NOT NULL DEFAULT 0,
     `enable` TINYINT(1) NOT NULL DEFAULT 1,
     `reg_time` INT(10) NOT NULL DEFAULT 0,
@@ -27,7 +27,7 @@ DROP TABLE IF EXISTS `ssport`;
 CREATE TABLE `ssport` (
     `port` SMALLINT(5) NOT NULL,
     `user_id` INT(10) NOT NULL,
-    `password` VARCHAR(255) NOT NULL,
+    `password` VARCHAR(191) NOT NULL,
     `enable` TINYINT(1) NOT NULL DEFAULT 1,
     PRIMARY KEY (`port`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -43,7 +43,7 @@ CREATE TABLE `transfer` (
 DROP TABLE IF EXISTS `token`;
 CREATE TABLE `token` (
     `user_id` INT(10) NOT NULL,
-    `token` VARCHAR(255) NOT NULL,
+    `token` VARCHAR(191) NOT NULL,
     PRIMARY KEY(`user_id`),
     UNIQUE KEY (`token`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
